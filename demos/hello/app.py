@@ -6,7 +6,7 @@
     :license: MIT, see LICENSE for more details.
 """
 import click
-from flask import Flask
+from flask import Flask, url_for, render_template
 
 app = Flask(__name__)
 
@@ -36,3 +36,7 @@ def greet(name):
 def hello():
     """Just say hello."""
     click.echo('Hello, Human!')
+
+@app.route('/redirect')
+def redirect():
+    return url_for('index', name='jack')

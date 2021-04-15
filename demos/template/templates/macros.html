@@ -6,6 +6,14 @@
     {%- endif %}
 {% endmacro %}
 
+{% macro odevity(num=1) %}
+    {% if num%2==0 %}
+        I am even number.
+    {% else %}
+        I am odd number.
+    {% endif %}
+{% endmacro %}
+
 {% macro static_file(type, filename_or_url, local=True) %}
     {% if local -%}
         {% set filename_or_url = url_for('static', filename=filename_or_url) %}
