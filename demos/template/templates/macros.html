@@ -7,11 +7,11 @@
 {% endmacro %}
 
 {% macro odevity(num=1) %}
-    {% if num%2==0 %}
+    {% if num%2==0 -%}
         I am even number.
-    {% else %}
+    {%- else -%}
         I am odd number.
-    {% endif %}
+    {%- endif %}
 {% endmacro %}
 
 {% macro static_file(type, filename_or_url, local=True) %}
